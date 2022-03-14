@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import "../../node_modules/normalize.css";
-@import "fonts.css";
 @import url("https://rsms.me/inter/inter.css");
 @font-face {
   font-family: "Poppins";
