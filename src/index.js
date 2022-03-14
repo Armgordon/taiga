@@ -9,7 +9,6 @@
 
 import './styles/main.scss'
 import {logPlugin} from "@babel/preset-env/lib/debug";
-// import './styles/main.css'
 
 // jarallax(document.querySelectorAll('.jarallax'), {
 //     speed: 0.3
@@ -48,19 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (isMobile.any()) {
         document.body.classList.add('_mobile')
-        /*
-                let menuArrows = document.querySelectorAll('.menu_arrow')
-                if (menuArrows.length > 0) {
-                    for (let index = 0; index < menuArrows.length; index++) {
-                        const menuArrow = menuArrows[index]
-                        menuArrow.addEventListener('click', function (e) {
-                            menuArrow.parentElement.classList.toggle('_active')
-                        })
-                    }
-                }
-
-         */
-
     } else {
         document.body.classList.add('_desktop')
     }
@@ -106,42 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-//доп меню
-    /*
-    const menuSubLinks = document.querySelectorAll('.menu_sub-link[data-goto]')
-
-    if (menuSubLinks.length > 0) {
-        menuSubLinks.forEach(menuSubLink => {
-            menuSubLink.addEventListener('click', onMenuSubLinkClick)
-        })
-        function onMenuSubLinkClick (e) {
-            const menuSubLink = e.target
-            if (menuSubLink.dataset.goto && document.querySelector(menuSubLink.dataset.goto)){
-                const gotoBlock = document.querySelector(menuSubLink.dataset.goto)
-
-                //pageYOffset - количество прокрученных пикселей
-                //необходимо заминусовать размер шапки элемента - ДОЕЗД
-                const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight - 5
-
-                // if (iconMenu.classList.contains('_active')) {
-                //     document.body.classList.remove('_lock')
-                //     iconMenu.classList.remove('_active')
-                //     menuBody.classList.remove('_active')
-                // }
-
-                window.scrollTo({
-                    top: gotoBlockValue,
-                    //Плавная прократука
-                    behavior: 'smooth'
-                })
-                e.preventDefault()
-            }
-        }
-    }
-
-     */
-
-
     //Проверка на скролл -> анимация первого экрана
     window.addEventListener('scroll', () => {
 
