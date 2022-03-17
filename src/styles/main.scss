@@ -1,5 +1,5 @@
 @import "../../node_modules/normalize.css";
-//@import "popup.css";
+@import "form.css";
 
 @import url('https://rsms.me/inter/inter.css');
 
@@ -16,7 +16,8 @@
 
 
 $brand_color_var1_1: #1d1d1e;
-$brand_color_var1_2: #cf9056;
+//$brand_color_var1_2: #cf9056;
+$brand_color_var1_2: #40a23d;
 $brand_color_var1_3: #aa4b41;
 $brand_color_var1_4: #ffffff;
 
@@ -305,6 +306,7 @@ body._lock{
 
     &_vertical{
       margin: 0;
+      text-align: center;
     }
 
     &_size-medium{
@@ -319,9 +321,12 @@ body._lock{
     color: $brand_color_var1_4;
 
     &:link{
-      color: $brand_color_var1_2;
+      //color: $brand_color_var1_2;
+      color: $brand_color_var1_4;
     }
+
     &:visited{
+      color: $brand_color_var1_4;
       //color: $brand_color_var1_4;
     }
     &:focus{}
@@ -350,10 +355,13 @@ body._lock{
 
 
 
+
 .logo{
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 10;
 
   &__img{
     width: 100%;
@@ -406,6 +414,12 @@ body._lock{
 
 }
 
+.hamburger{
+  display: none;
+
+
+}
+
 .content {
   padding-top: 100px ;
   font-size: 18px;
@@ -422,7 +436,7 @@ body._lock{
 
   &_first{
     //background-color: #2b2b2b;
-    height: calc(100vh - 100px);
+    //height: calc(100vh - 100px);
 
     & > .section__inner{
       //padding-left: 0;
@@ -443,13 +457,20 @@ body._lock{
 
   &__img-main{
     margin-right: 40px;
-    border: 2px solid #cd8f56;
+    border: 2px solid $brand_color_var1_2;
+    max-width: 512px;
   }
 
   &__img-centered{
     display: block;
     margin: 0 auto;
-    border: 2px solid #cd8f56;
+    border: 2px solid $brand_color_var1_2;
+  }
+
+  &__img-left{
+    display: inline-block;
+    height: 500px;
+    border: 2px solid $brand_color_var1_2;
   }
 
   &__sub-title{
@@ -476,6 +497,7 @@ body._lock{
 
     &_row{
       display: flex;
+      overflow: hidden;
       flex-direction: row;
 
     }
@@ -483,7 +505,7 @@ body._lock{
 
   &__body{
     width: 100%;
-
+    margin-top: 20px;
 
     ul{
       padding-left: 30px ;
@@ -524,6 +546,8 @@ body._lock{
 
   &__img-gal_large{
     width: 100%;
+    position: relative;
+    top:-50px
 
   }
 
@@ -547,6 +571,45 @@ body._lock{
   }
 
 }
+
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+
+}
+
+.text{
+
+  &_justify{
+    text-align: justify;
+  }
+
+  &_italic{
+    font-style: italic;
+
+  }
+
+  &__sign{
+    display: block;
+    text-align: right;
+    font-style: normal;
+
+  }
+
+  &__row{
+    margin: 0;
+
+  }
+
+  &_nowrap{
+    white-space: nowrap;
+
+  }
+}
+
 
 .header-section{
   //background: #fdfdfe;
@@ -582,10 +645,11 @@ body._lock{
   &__img-container{
     position: absolute;
     right: 0;
-    top:50%;
-    //transform: translateY(-50%);
+    top:65%;
+    transform: translateY(-50%);
 
     width: 450px;
+    //height: 250px;
     z-index: 1;
 
   }
@@ -598,24 +662,38 @@ body._lock{
 
 
   &__inner{
-    position: relative;
-    top:40%;
-    transform: translateY(-50%);
-    min-height: 550px;
+    //position: relative;
+    //top:40%;
+    //transform: translateY(-50%);
+    min-height: 600px;
 
   }
 }
 
 
 .project{
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 2em;
 
+
   &_reverse{
     flex-direction: row-reverse;
+
+  }
+
+  &__title{
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+
+  }
+
+  &__inner{
+
 
   }
 
@@ -625,6 +703,7 @@ body._lock{
     display: inline-block;
    //width: 40%;
    font-size: 1.5em;
+    line-height: 1.2;
 
    vertical-align: top;
   }
@@ -638,10 +717,15 @@ body._lock{
 .footer{
   padding: 0 40px;
 
+  &__col{
+    width: 15%;
+  }
+
   &__subtitle{
-    color: #cd8f56;
+    color: $brand_color_var1_2;
     font-size: 1.2em;
     margin-bottom: .5em;
+    text-align: center;
   }
 
   &__inner{
@@ -653,12 +737,21 @@ body._lock{
   }
 
   &__icons_row{
+    text-align: center;
 
 
   }
 
 
+  &__contacts{
+
+
+  }
 }
+
+
+
+
 
 
 
@@ -682,6 +775,7 @@ body._lock{
 
 @media screen and (max-width: 992px) {
 
+
   .section {
     //background-color: #59a0ac;
 
@@ -704,16 +798,20 @@ body._lock{
 
     }
     &__img-gal_small{
-      width: unset;
       position: relative;
-      left: -50%;
+      left: unset;
     }
 
     &__img-gal_large{
-      width: unset;
+      //width: unset;
       position: relative;
-      top: 50%;
+      top: unset;
       //left: -50%;
+    }
+
+    &__img-left{
+      height: 350px;
+
     }
   }
 
@@ -736,7 +834,11 @@ body._lock{
 
     &__img-container{
       position: relative;
-      width: 100%;
+      //width: 100%;
+      width: 60%;
+      top:50%;
+      transform: unset;
+
 
 
     }
@@ -767,15 +869,36 @@ body._lock{
 
   }
 
-  .project__descr{
-    line-height: 1.2;
+  .project {
 
+    &__title {
+      line-height: 1.2em;
+
+    }
+
+    &__descr {
+      line-height: 1.2;
+
+    }
   }
 
 }
 
 
 @media screen and (max-width: 768px) {
+
+  .first-screen{
+    margin-bottom: 40px;
+    &__inner{
+      min-height: unset;
+
+    }
+  }
+
+
+  .nav__list{
+    padding: 0;
+  }
 
   .section {
     //background-color: #aca559;
@@ -820,6 +943,11 @@ body._lock{
   .project{
     margin-bottom: 2em;
 
+    &__title{
+      line-height: 1;
+
+    }
+
     &__descr{
       font-size: 1.2em;
     }
@@ -828,6 +956,19 @@ body._lock{
       width: 280px;
     }
 
+  }
+
+  .footer{
+    &__inner{
+      flex-direction: column;
+      align-items: center;
+    }
+    &__col{
+      text-align: center;
+      width: 100%;
+      margin-bottom: 1em;
+
+    }
   }
 
 
@@ -852,10 +993,95 @@ body._lock{
 
 
 @media (max-width: 600px) {
+
+
+
+  .nav__content{
+    justify-content: center;
+
+  }
+  .nav__list_main {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    right: 0;
+    top: 100px;
+    width: 100%;
+    background-color: $brand_color_var1_1;
+    transition: 1s top ease;
+
+    & > .nav__element{
+      z-index: 1;
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding: 10px 0;
+      height: 50px;
+      transition: all 1s ease;
+
+      &:hover{
+        background-color: #2f2e33;
+
+        .nav__link{
+          width: 100%;
+          color: $brand_color_var1_2;
+          transition: all .5s ease;
+
+        }
+      }
+
+      &_closed{
+        padding: 0;
+        height: 0;
+        font-size: 0.5em;
+        transition: all 1s ease;
+
+      }
+
+
+    }
+  }
+
+  .nav__list_closed{
+    top: 50px;
+    transition: 1s top ease;
+  }
+
+  .hamburger{
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    &__icon{
+      font-size: 2em;
+      //color: red;
+    }
+  }
+
+
+  .h1 {
+    font-size: 2.5em;
+
+    &__be{
+      margin-right: 165px;
+    }
+
+  }
+
+  .h3, .h2{
+    font-size: 3em;
+
+  }
   .first-screen{
     &__inner{
-      top: 50%;
-      transform: translateY(-50%);
+      //top: 50%;
+      //transform: translateY(-50%);
     }
   }
 
@@ -884,20 +1110,66 @@ body._lock{
 
   }
 
+  .mob_col{
+    flex-direction: column;
+    gap: 1em;
+
+  }
+
+  .text{
+    margin: 0;
+  }
+
+  .section{
+    &__row{
+      flex-direction: column;
+      height: 460px;
+      justify-content: unset;
+      margin-bottom: unset;
+      &_small{
+        flex: 2;
+      }
+
+    }
+  }
+
+  .section__img-gal_small {
+    left: unset;
+    //top: -50%;
+
+  }
+  .section__img-gal_large{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .section__row_big{
+    flex: unset;
+  }
+
+  .section__row_small{
+    flex: unset;
+  }
+
+
+
 }
 
 
 @media screen and (max-width: 480px) {
 
+  .h1{
+
+    &__be{
+      margin-right: 135px;
+    }
+
+  }
+
   .section {
     //background-color: #7e59ac;
   }
 
-  .nav{
-    &__list{
-      display: none;
-    }
-  }
 
   .footer{
 
@@ -918,6 +1190,10 @@ body._lock{
     &__inner{
 
     }
+
+    &__img-left{
+      height: 250px;
+    }
   }
 
   .content{
@@ -928,6 +1204,11 @@ body._lock{
     &__verb{
       padding: 0;
 
+    }
+  }
+  .footer{
+    &__inner{
+      padding: 20px 0;
     }
   }
 }

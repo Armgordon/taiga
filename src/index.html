@@ -32,27 +32,26 @@
 <!--                            <a class="nav__link" data-goto=".header">Taiga miniatures</a>-->
 <!--                        </div>-->
                     </div>
+                    <div class="hamburger">
+                        <i class='bx bx-menu hamburger__icon'></i>
+                        <div class="icon"></div>
+                    </div>
 
-                    <ul class="nav__list">
-                        <li class="nav__element">
-                            <a class="nav__link" data-goto=".section_1">
-                                Mission
-                            </a>
+                    <ul class="nav__list nav__list_main nav__list_closed">
+                        <li class="nav__element nav__element_closed">
+                            <a class="nav__link" data-goto=".section_1">Mission</a>
                         </li>
-                        <li class="nav__element">
-                            <a class="nav__link" data-goto=".section_2">
-                                Project
-                            </a>
+                        <li class="nav__element nav__element_closed">
+                            <a class="nav__link" data-goto=".section_2">Projects</a>
                         </li>
-                        <li class="nav__element">
-                            <a class="nav__link" data-goto=".section_3">
-                                Founder
-                            </a>
+                        <li class="nav__element nav__element_closed">
+                            <a class="nav__link" data-goto=".section_3">Founder</a>
                         </li>
-                        <li class="nav__element">
-                            <a class="nav__link" data-goto=".section_4">
-                                Gallery
-                            </a>
+                        <li class="nav__element nav__element_closed">
+                            <a class="nav__link" data-goto=".section_4">Gallery</a>
+                        </li>
+                        <li class="nav__element nav__element_closed">
+                            <a class="nav__link" data-goto=".section_5">Contacts</a>
                         </li>
 
                     </ul>
@@ -68,7 +67,8 @@
                         <div class="section__title first-screen__title">
                             <h1 class="h1 first-screen__h1">Even more<span class="h1__verb">marvels</span> <span class="h1__be">are</span>&nbsp;<span class="h1__conclusion">ahead</span> </h1>
                             <div class="first-screen__img-container">
-                                <img class="first-screen__img" src="./assets/images/taiga_pic1_filtered2.png">
+<!--                                <img class="first-screen__img" src="./assets/images/taiga_pic1_filtered2.png">-->
+                                <img class="first-screen__img" src="./assets/images/logo_white.png">
                             </div>
                         </div>
                     </div>
@@ -77,12 +77,12 @@
 
                     <div class="section__inner section__inner_row inner_revert">
 
-                        <img src="./assets/images/img1.webp" class="section__img-main">
+                        <img src="./assets/images/mission.png" class="section__img-main" alt="mission">
 
                         <div class="section__title">
                             <h3 class="h3">Our mission</h3>
                             <hr>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium expedita harum inventore neque officia quae temporibus voluptatibus. Ipsa nam necessitatibus nihil optio temporibus, vero voluptas. Doloremque dolores officiis perspiciatis sunt!</p>
+                            <p>Create unique and exciting content that will attract thousands of new players and it will grow into a new amazing universe.</p>
                         </div>
                     </div>
                 </section>
@@ -94,12 +94,18 @@
                         </div>
                         <div class="section__body">
                             <div class="project">
-                                <p class="project__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur dicta molestias odit quisquam! Ad autem ducimus ea error eveniet expedita facilis itaque modi numquam, rem repudiandae sequi tempore vel.</p>
-                                <img class="project__img" src="./assets/images/img2.webp" alt="img2">
+                                <div class="project__inner">
+                                    <h3 class="project__title">Fantasy adventures - STL models for 5e campaigns</h3>
+                                    <p class="project__descr">This is a set of STL files for self printing. You get a full-fledged adventure that consists of 3 locations, a set of heroes, NPCs, and enemies. The project files are pre-supported and test-printed. By supporting our STL companies you are helping full-fledged tabletop games come out faster.</p>
+                                </div>
+                                <img class="project__img" src="./assets/images/prj1.png" alt="prj1">
                             </div>
                             <div class="project project_reverse">
-                                <p class="project__descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur dicta molestias odit quisquam! Ad autem ducimus ea error eveniet expedita facilis itaque modi numquam, rem repudiandae sequi tempore vel.</p>
-                                <img class="project__img" src="./assets/images/img3.webp" alt="img3">
+                                <div class="project__inner">
+                                    <h3 class="project__title">Board game "Swords and Spears"</h3>
+                                    <p class="project__descr">Strategy board game with miniatures for two players. Simple rules and fast games are the main advantage of this game. Release is expected in the 2nd half of 2022.</p>
+                                </div>
+                                    <img class="project__img" src="./assets/images/prj2.png" alt="prj2">
                             </div>
                         </div>
                     </div>
@@ -110,9 +116,12 @@
                             <h2 class="h2">Founder</h2>
                             <hr>
                         </div>
-                        <div class="section__body">
-                            <p class="section__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium consequuntur dicta molestias odit quisquam! Ad autem ducimus ea error eveniet expedita facilis itaque modi numquam, rem repudiandae sequi tempore vel.</p>
-                            <img class="section__img-centered" src="./assets/images/img2.webp" alt="img2">
+                        <div class="section__body row row_hight mob_col">
+                            <img class="section__img-left" src="./assets/images/founder.png" alt="founder">
+                            <p class="section__text text text_italic">"The audience of board game lovers has warmly welcomed our miniatures store, now it's time to bring something useful to the community."
+                                <span class="text text_justify text__sign">&mdash;&nbsp;Aleksandr Priadkin</span>
+                            </p>
+
                         </div>
                     </div>
                 </section>
@@ -125,25 +134,132 @@
                         <div class="section__body">
                             <div class="section__row">
                                 <div class="section__row_small">
-                                    <img class="section__img-gal_small" src="./assets/images/gal_1.webp">
+                                    <img class="section__img-gal_small" src="./assets/images/gal_5.png">
                                 </div>
                                 <div class="section__row_big">
-                                    <img class="section__img-gal_large" src="./assets/images/gal_2.webp" style="position: relative; top:-200px">
+                                    <img class="section__img-gal_large" src="./assets/images/gal_2.png" >
                                 </div>
                             </div>
                             <div class="section__row">
                                 <div class="section__row_big">
-                                    <img class="section__img-gal_large" src="./assets/images/gal_3.webp" style="position: relative; top:-150px">
+                                    <img class="section__img-gal_large" src="./assets/images/gal_1.png" >
                                 </div>
                                 <div class="section__row_small">
-                                    <img class="section__img-gal_small" src="./assets/images/gal_4.webp">
+                                    <img class="section__img-gal_small" src="./assets/images/gal_4.png">
                                 </div>
 
                             </div>
 
+                            <div class="section__row">
+                                <div class="section__row_small">
+                                    <img class="section__img-gal_small" src="./assets/images/gal_7.png">
+                                </div>
+                                <div class="section__row_big">
+                                    <img class="section__img-gal_large" src="./assets/images/gal_6.png" >
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </section>
+
+                <section class="section section_5 ">
+                    <div class="section__inner">
+                        <div class="section__title">
+                            <h2 class="h2">Contact us</h2>
+                            <hr>
+                        </div>
+                        <div class="section__body">
+                            <div class="form">
+                                <form action="#" id="form" class="form__body">
+
+                                    <!-- Имя -->
+                                    <div class="form__item">
+                                        <!--                                            <label for="formName" class="form__label">*Name:</label>-->
+                                        <input id="formName" type="text" name="name" placeholder="Your name" class="form__input">
+                                    </div>
+                                    <!-- E-mail -->
+                                    <div class="form__item">
+                                        <!--    <label for="formEmail" class="form_label">E-mail*:</label>-->
+                                        <input id="formEmail" type="text" name="email" placeholder="Your email" class="form__input _req _email">
+                                    </div>
+                                    <!-- Company -->
+<!--                                    <div class="form__item">-->
+                                        <!--                                        <label for="formEmail" class="form_label">E-mail*:</label>-->
+<!--                                        <input id="formCompany" type="text" name="email" placeholder="Company name" class="form__input _req _email">-->
+<!--                                    </div>-->
+
+                                    <!-- Телефон -->
+                                    <!--        <div class="form__item form__item_pad-top">-->
+                                    <!--            <label for="formPhone" class="form__label"></label>-->
+                                    <!--            <input id="formPhone" type="text" name="phone" placeholder="*Phone number" class="input-group__field form__input _phone _req">-->
+                                    <!--        </div>-->
+                                    <!-- Способ ответа на сообщение -->
+                                    <!--                    <div class="form_item">-->
+                                    <!--                        <div class="form_label">Способ ответ на сообщение</div>-->
+                                    <!--                        <div class="options">-->
+                                    <!--                            <div class="option_item">-->
+                                    <!--                                <input id="formEmailSelect" checked type="radio" value="emailSelect" name="communication" class="options_input">-->
+                                    <!--                                <label for="formEmailSelect" class="options_label"><span>email</span></label>-->
+                                    <!--                            </div>-->
+                                    <!--                            <div class="option_item">-->
+                                    <!--                                <input id="formPhoneSelect" type="radio" value="phoneSelect" name="communication" class="options_input">-->
+                                    <!--                                <label for="formPhoneSelect" class="options_label"><span>телефон</span></label>-->
+                                    <!--                            </div>-->
+                                    <!--                        </div>-->
+                                    <!--                    </div>-->
+
+                                    <!-- Сообщение -->
+                                                                    <div class="form__item form__item_pad-top">
+                                                                        <label for="formMessage" class="form__label"></label>
+                                                                        <textarea id="formMessage" name="message" placeholder="Message" class="input-group__field form__input _req"></textarea>
+                                                                    </div>
+
+                                    <!-- Добавление файла -->
+                                    <!--                                <div class="form__item form__item_pad-top">-->
+                                    <!--                                    <label for="formFile" class="form__label"></label>-->
+                                    <!--                                    <input type="file" name="uploaded_file" accept=".doc,.docx,.pdf" id="formFile"  class="input-group__field form__input">-->
+                                    <!--                                </div>-->
+
+
+                                    <!--                                <div class="form__item item_small">-->
+                                    <!--                                    <span class="note_small">*indicates a required fields</span>-->
+                                    <!--                                </div>-->
+
+
+
+                                    <!-- Соглашение -->
+                                    <!--                                <div class="form__item hide">-->
+                                    <!--                                    <div class="checkbox" >-->
+                                    <!--                                        <input id="formAgreement" type="checkbox" name="agreement" class="checkbox__input">-->
+                                    <!--                                        <label for="formAgreement" class="checkbox__label">-->
+                                    <!--                                                <span>I agree to the-->
+                                    <!--                                                    <a href="./assets/privacy_policy.doc">Privacy&nbsp;Policy</a>-->
+                                    <!--                                                </span>-->
+                                    <!--                                        </label>-->
+                                    <!--                                    </div>-->
+                                    <!--                                </div>-->
+                                    <!--    <button type="submit" class="form_button">Отправить</button>-->
+
+
+
+
+                                    <div class="text-center form__item">
+                                        <a class="form__button btn btn_white btn_animate btn_wide" onclick="document.forms[0].requestSubmit()">
+                                            get an offer
+                                        </a>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+
+
+
             </div>
         </main>
         <footer class="footer section">
@@ -160,7 +276,7 @@
                         </li>
                         <li class="nav__element nav__element_vertical">
                             <a class="nav__link" data-goto=".section_2">
-                                Project
+                                Projects
                             </a>
                         </li>
                         <li class="nav__element nav__element_vertical">
@@ -173,6 +289,11 @@
                                 Gallery
                             </a>
                         </li>
+                        <li class="nav__element nav__element_vertical">
+                            <a class="nav__link" data-goto=".section_5">
+                                Contacts
+                            </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -182,15 +303,22 @@
                     </div>
                     <div class="footer__icons_row nav">
 <!--                        <a class="nav__element nav__element_vertical nav__element_size-medium" href="#"><i class='bx bxl-instagram'></i></a>-->
-                        <a class="nav__link nav__element_size-medium" href="#"><i class='bx bxl-instagram'></i></a>
-                        <a class="nav__link nav__element_size-medium" href="#"><i class='bx bxl-meta' ></i></a>
-                        <a class="nav__link nav__element_size-medium" href="#"><i class='bx bxl-pinterest' ></i></a>
+                        <a class="nav__link nav__element_size-medium" href="https://www.instagram.com/taiga_miniatures"><i class='bx bxl-instagram'></i></a>
+<!--                        <a class="nav__link nav__element_size-medium" href="#"><i class='bx bxl-meta' ></i></a>-->
+<!--                        <a class="nav__link nav__element_size-medium" href="#"><i class='bx bxl-pinterest' ></i></a>-->
                     </div>
                 </div>
                 <div class="footer__col">
                     <div class="footer__subtitle">
-                        Smth else
+                        Contacts
                     </div>
+                    <div class="footer__contacts">
+                        <p class="text text__row text_nowrap">TAIGA MINIATURES INC</p>
+                        <p class="text text__row text_nowrap">30 N GOULD ST STE R</p>
+                        <p class="text text__row text_nowrap">SHERIDAN, WY 82801</p>
+                        <a href="mailto:contact@taigaminiatures.com" class="text text_nowrap nav__link">contact@taigaminiatures.com</a>
+                    </div>
+
                 </div>
 
             </div>

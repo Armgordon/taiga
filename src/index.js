@@ -1,7 +1,7 @@
 /** examples **/
 
 // import popup from "./js/popup.js"
-// import form from "./js/form.js"
+import form from "./js/form.js"
 
 /** Main code **/
 
@@ -17,7 +17,9 @@ import {logPlugin} from "@babel/preset-env/lib/debug";
 
 document.addEventListener('DOMContentLoaded', () => {
 
-//Проверка на мобильные устройства
+/**
+ * Проверка на мобильные устройства
+ */
     const isMobile = {
         Android: function () {
             return navigator.userAgent.match(/Android/i);
@@ -52,8 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+/**
+ * Прокуратка при клике
+ */
 
-//Прокуратка при клике
 //основное меню
     const menuLinks = document.querySelectorAll('.nav__link[data-goto]')
 
@@ -74,28 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('.nav').offsetHeight
 
-                /*
-                if (iconMenu.classList.contains('_active')) {
-                    document.body.classList.remove('_lock')
-                    iconMenu.classList.remove('_active')
-                    menuBody.classList.remove('_active')
-                }
-
-                */
-
                 window.scrollTo({
                     top: gotoBlockValue,
                     //Плавная прократука
                     behavior: 'smooth'
                 })
                 e.preventDefault()
+                changeMenuIcon()
+                closeList()
+
             }
         }
     }
     //Проверка на скролл -> анимация первого экрана
     window.addEventListener('scroll', () => {
 
-        console.log(document.body.scrollTop)
+        // console.log(document.body.scrollTop)
         if (pageYOffset > 0) {
             document.body.classList.add('_scrolled')
         } else {
@@ -106,3 +104,73 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
 })
+
+
+let hamburger = document.querySelector('.hamburger')
+let icon = document.querySelector('.hamburger__icon')
+let xClass = 'bx-x'
+let menuClass = 'bx-menu'
+let open = false
+
+let menuList = document.querySelector('.nav__list_main')
+let menuElements = menuList.children
+
+let menuArray = Array.from(menuElements)
+
+console.log(menuElements)
+
+
+function changeMenuIcon(){
+    if (open) {
+        icon.classList.remove(xClass)
+        icon.classList.add(menuClass)
+
+    } else {
+        icon.classList.remove(menuClass)
+        icon.classList.add(xClass)
+    }
+}
+
+function closeList(){
+    menuArray.forEach((element) => {
+        element.classList.add('nav__element_closed')
+    })
+    menuList.classList.add('nav__list_closed')
+
+    open = false
+    console.log('list closed')
+}
+
+function openList(){
+
+    menuArray.forEach((element) => {
+        element.classList.remove('nav__element_closed')
+    })
+    menuList.classList.remove('nav__list_closed')
+
+    open = true
+
+    console.log('list opened')
+
+}
+
+
+hamburger.addEventListener('click',()=> {
+
+    changeMenuIcon()
+    if (open) {
+        closeList()
+    } else {
+        openList()
+    }
+
+
+
+
+
+
+
+
+})
+
+

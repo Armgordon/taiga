@@ -65,8 +65,8 @@ const plugins = () => {
                 // {from: path.resolve(__dirname, 'src/favicon.ico'), to: path.resolve(__dirname, 'dist')},
                 // {from: path.resolve(__dirname, 'src/assets/'), to: path.resolve(__dirname, 'dist')},
                 {from: path.resolve(__dirname, 'src/assets/'), to: path.resolve(__dirname, 'dist/assets/')},
-                // {from: path.resolve(__dirname, 'src/PHPMailer/'), to: path.resolve(__dirname, 'dist/PHPMailer/')},
-                // {from: path.resolve(__dirname, 'src/sendmail.php'), to: path.resolve(__dirname, 'dist')},
+                {from: path.resolve(__dirname, 'src/PHPMailer/'), to: path.resolve(__dirname, 'dist/PHPMailer/')},
+                {from: path.resolve(__dirname, 'src/sendmail.php'), to: path.resolve(__dirname, 'dist')},
             ]
         }),
     ]
@@ -88,6 +88,7 @@ module.exports = {
     mode: 'development',
     entry: {
         main: ['@babel/polyfill','./index.js'], //подключен полифил
+        // analytics: './js/analytics.js',
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
